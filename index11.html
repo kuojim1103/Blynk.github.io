@@ -40,6 +40,10 @@
                 width: 80%;
                 margin: 10px 0;
             }
+
+            #button2 {
+                order: 2;
+            }
         }
     </style>
 </head>
@@ -55,11 +59,9 @@
     <script>
         function toggleButton(button, openUrl, closeUrl) {
             if (button.textContent.includes('開啟')) {
-                // 開啟狀態 -> 執行開啟URL
                 executeUrl(openUrl);
                 button.textContent = button.textContent.replace('開啟', '關閉');
             } else {
-                // 關閉狀態 -> 執行關閉URL
                 executeUrl(closeUrl);
                 button.textContent = button.textContent.replace('關閉', '開啟');
             }
@@ -71,7 +73,7 @@
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
                     }
-                    return response.text(); // 可以根據需要改成 response.json()
+                    return response.text();
                 })
                 .then(data => console.log('URL executed:', url, 'Response:', data))
                 .catch(error => console.error('Error executing URL:', error));

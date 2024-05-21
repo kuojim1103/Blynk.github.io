@@ -41,8 +41,20 @@
                 margin: 10px 0;
             }
 
-            #button2 {
+            #button1 {
+                order: 1;
+            }
+
+            #button3 {
                 order: 2;
+            }
+
+            #button2 {
+                order: 3;
+            }
+
+            #button4 {
+                order: 4;
             }
         }
     </style>
@@ -57,7 +69,10 @@
     </div>
 
     <script>
-     
+        function toggleButton(button, url) {
+            executeUrl(url);
+            console.log(button.textContent + ' button clicked');
+        }
 
         function executeUrl(url) {
             fetch(url)

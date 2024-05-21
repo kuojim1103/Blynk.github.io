@@ -57,15 +57,7 @@
     </div>
 
     <script>
-        function toggleButton(button, openUrl, closeUrl) {
-            if (button.textContent.includes('開啟')) {
-                executeUrl(openUrl);
-                button.textContent = button.textContent.replace('開啟', '關閉');
-            } else {
-                executeUrl(closeUrl);
-                button.textContent = button.textContent.replace('關閉', '開啟');
-            }
-        }
+     
 
         function executeUrl(url) {
             fetch(url)

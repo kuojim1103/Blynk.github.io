@@ -65,7 +65,7 @@
         <button id="button1" onclick="toggleButton(this, 'https://sgp1.blynk.cloud/external/api/update?token=zSOLEsDJdqG7SqFL0gvH5c3kvOIp_c8Q&v0=1')">鋁罐</button>
         <button id="button3" onclick="toggleButton(this, 'https://sgp1.blynk.cloud/external/api/update?token=zSOLEsDJdqG7SqFL0gvH5c3kvOIp_c8Q&v1=1')">寶特瓶</button>
         <button id="button2" onclick="toggleButton(this, 'https://sgp1.blynk.cloud/external/api/update?token=zSOLEsDJdqG7SqFL0gvH5c3kvOIp_c8Q&v2=1')">一般垃圾</button>
-        <button id="button4" onclick="toggleButton(this, 'https://sgp1.blynk.cloud/external/api/update?token=zSOLEsDJdqG7SqFL0gvH5c3kvOIp_c8Q&v0=0&v1=0&v2=0')">關閉</button>
+        <button id="button4" onclick="closeAll()">關閉</button>
     </div>
 
     <script>
@@ -84,6 +84,12 @@
                 })
                 .then(data => console.log('URL executed:', url, 'Response:', data))
                 .catch(error => console.error('Error executing URL:', error));
+        }
+
+        function closeAll() {
+            executeUrl('https://sgp1.blynk.cloud/external/api/update?token=zSOLEsDJdqG7SqFL0gvH5c3kvOIp_c8Q&v0=0');
+            executeUrl('https://sgp1.blynk.cloud/external/api/update?token=zSOLEsDJdqG7SqFL0gvH5c3kvOIp_c8Q&v1=0');
+            executeUrl('https://sgp1.blynk.cloud/external/api/update?token=zSOLEsDJdqG7SqFL0gvH5c3kvOIp_c8Q&v2=0');
         }
     </script>
 </body>
